@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        
+         .price-tag {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            background: #008b8b;
+            transform: rotate(-90deg);
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+
+        .tour-card {
+    height: 300px; /* Set height */
+    width: 100%; /* Bootstrap column width */
+    gap: 10px;
+    font-size: 14px;
+    margin-top: 0px;
+    top: 0px;
+    right: 0px;
+    background: #008b8b;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 0px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tour-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+
+
+        .tour-meta{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            padding-top: 25px;
+        }
+         .tour-meta i {
+            color: #ffffff;
+            
+        }
+        .line{
+            width: 100px;
+            height: 1px;
+            background-color: #fff;
+            transition: all 0.8s ease;
+        }
+        
+        .TourPages{
+            opacity: 1;
+            padding-bottom: 5px;
+        }
+        .opacity-0{
+            opacity: 1;
+        }
+        .tour-info{
+            position: absolute;
+            bottom: -20px;
+            
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            padding: 15px;
+            transition: all 0.5s ease;
+        }
+      .widthcol-8{
+        background-color: black;
+        width: 850px;
+        height: 400px;
+      }
+      /* .tour-card img {
+        width: 850px;
+        height: 500px;
+        
+            object-fit: cover;
+            transition: all 0.5s ease;
+        } */
+        .heading-6{
+            text-transform: uppercase;
+            word-spacing: 5px;
+            letter-spacing: 4px;
+            margin-left: 5px;
+            color: #008b8b;
+            padding-bottom: 5px;
+        }
+        .heading-1{
+            text-transform: uppercase;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            color: #008b8b;
+            margin-left: 5px;
+            padding-bottom: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-5  bg-dark">
+        <div class="container">
+            <div class="row g-3">
+
+                <div class="col-md-4 col-12 ">
+                    <div class="tour-card">
+                        <img src="nice-pic.jpeg" alt="Greece Tour" class="img img2">
+                        <div class="price-tag">$500</div>
+                        
+                        <div class="tour-info">
+                            <h4 class="TourPages">Greece Tour</h4>
+                            <div class="line "> </div>
+                            <div class="tour-meta opacity-0 opacity0-1">
+                                <span><i class="bi bi-clock"></i> 10 Days</span>
+                                <span><i class="bi bi-person"></i> 12+</span>
+                                <span><i class="bi bi-geo-alt"></i> Greece</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 ">
+                    <div class="tour-card">
+                        <img src="nice-pic.jpeg" alt="Greece Tour" class="img img2">
+                        <div class="price-tag">$500</div>
+                        
+                        <div class="tour-info">
+                            <h4 class="TourPages">Greece Tour</h4>
+                            <div class="line "> </div>
+                            <div class="tour-meta opacity-0 opacity0-1">
+                                <span><i class="bi bi-clock"></i> 10 Days</span>
+                                <span><i class="bi bi-person"></i> 12+</span>
+                                <span><i class="bi bi-geo-alt"></i> Greece</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 ">
+                    <div class="tour-card">
+                        <img src="nice-pic.jpeg" alt="Greece Tour" class="img img2">
+                        <div class="price-tag">$500</div>
+                        
+                        <div class="tour-info">
+                            <h4 class="TourPages">Greece Tour</h4>
+                            <div class="line "> </div>
+                            <div class="tour-meta opacity-0 opacity0-1">
+                                <span><i class="bi bi-clock"></i> 10 Days</span>
+                                <span><i class="bi bi-person"></i> 12+</span>
+                                <span><i class="bi bi-geo-alt"></i> Greece</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const hoverDivs = document.getElementsByClassName("tour-card");
+
+    for (let i = 0; i < hoverDivs.length; i++) {
+        let hoverDiv = hoverDivs[i];
+        let tourInfo = hoverDiv.querySelector(".tour-info");
+        let tourMeta = hoverDiv.querySelector(".tour-meta");
+        let heading = hoverDiv.querySelector(".TourPages");
+        let IMG = hoverDiv.querySelector(".img");
+        let LINE = hoverDiv.querySelector(".line"); // Selecting line correctly
+
+        hoverDiv.addEventListener("mouseenter", function () {
+            tourInfo.style.bottom = "0px";
+            tourInfo.style.opacity = "1";
+            tourMeta.classList.remove("opacity-0");
+            IMG.style.transform = "scale(1.10)";
+            LINE.style.width = "320px"; // Other tour-cards
+        });
+
+        hoverDiv.addEventListener("mouseleave", function () {
+            tourInfo.style.bottom = "-30px";
+            tourMeta.classList.add("opacity-0");
+            IMG.style.transform = "scale(1)";
+            LINE.style.width = "100px"; // Reset width on mouse leave
+        });
+    }
+});
+    </script>
+</body>
+</html>
